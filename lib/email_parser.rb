@@ -11,17 +11,18 @@ class EmailParser
   end
 
   def parse
-    formatted_emails = []
-    @unformatted_emails.split(" ").each do |email|
-      if email.include?(',')
-        formatted_emails << email.gsub(/,/, '')
-      elsif formatted_emails.include?(email)
-      else
-        formatted_emails << email
-      end
-    end
-    formatted_emails
+  #   formatted_emails = []
+  #   @unformatted_emails.split(" ").each do |email|
+  #     if email.include?(',')
+  #       formatted_emails << email.gsub(/,/, '')
+  #     elsif formatted_emails.include?(email)
+  #     else
+  #       formatted_emails << email
+  #     end
+  #   end
+  #   formatted_emails
+  # end
+
+    @unformatted_emails.gsub(/,/, '').split(" ").uniq
   end
-
-
 end
